@@ -1,0 +1,29 @@
+name: dbt-postgres-ci
+on: 
+  pull_request:
+    types:
+      - opened
+  workflow_dispatch:
+jobs: 
+  dbt-job:
+    runs-on: ubuntu-latest
+    env:
+      DBT_PROFILES_DIR: .
+      PGHOST: ${{ secrets.PGHOST }}
+      PGUSER: ${{ secrets.PGUSER }}
+      PGPASSWORD: ${{ secrets.PGPASSWORD }}
+      PGDATABASE: ${{ secrets.PGDATABASE }}
+      PGPORT: ${{ secrets.PGPORT }}  # If necessary
+    steps:
+      - name: Get code 
+        uses: actions/checkout@v3
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+      - name: install dbt dependencies
+        run: pip install -r requirements.txt
+      - name: Run dbt seed command
+        run: dbt seed --profiles-dir . --target dev
+      - name: Run dbt build command
+        run: dbt build --profiles-dir . --target dev
