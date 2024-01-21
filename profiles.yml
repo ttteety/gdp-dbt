@@ -1,6 +1,15 @@
 gdp:
   outputs:
     dev:
+      dbname: gdp_db
+      host: localhost
+      pass: password123
+      port: 5432
+      schema: gdp
+      threads: 1
+      type: postgres
+      user: gdp_user
+    ci:
       dbname: "{{ env_var('PGDATABASE')}}"
       host: "{{ env_var('PGHOST')}}"
       pass: "{{ env_var('PGPASSWORD')}}"

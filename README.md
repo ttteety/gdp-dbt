@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 ### 6. Setup a profile in dbt
 
-Setup a profie call `gdp` to connect to PostgreSQL database in `.dbt/profiles.yaml`. The sample of the profile is as below:
+Setup a profie call `gdp` to connect to PostgreSQL database in `profiles.yaml`. The sample of the profile is as below:
 
 ```
 gdp:

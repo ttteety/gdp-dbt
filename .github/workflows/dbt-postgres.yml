@@ -27,6 +27,6 @@ jobs:
       - name: Run dbt deps command
         run: dbt deps
       - name: Run dbt seed command
-        run: dbt seed --target dev
+        run: dbt seed --target ci
       - name: Run dbt build command
-        run: dbt build --target dev
+        run: dbt build --target ci
