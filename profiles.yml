@@ -1,0 +1,12 @@
+gdp:
+  outputs:
+    dev:
+      dbname: "{{ env_var('PGDATABASE')}}"
+      host: "{{ env_var('PGHOST')}}"
+      pass: "{{ env_var('PGPASSWORD')}}"
+      port: "{{ env_var('PGPORT')}}"
+      schema: gdp
+      threads: 4
+      type: postgres
+      user: "{{ env_var('PGUSER')}}"
+  target: dev
