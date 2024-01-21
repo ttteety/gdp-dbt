@@ -23,6 +23,8 @@ jobs:
           python-version: 3.10.x
       - name: install dbt dependencies
         run: pip install -r requirements.txt
+      - name: Run dbt deps command
+        run: dbt deps
       - name: Run dbt seed command
         run: dbt seed --target dev
       - name: Run dbt build command
