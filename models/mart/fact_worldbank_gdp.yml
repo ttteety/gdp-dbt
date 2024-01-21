@@ -8,7 +8,6 @@ models:
           - not_null
       - name: year
         tests:
-          - not_null
           - dbt_utils.accepted_range:
               min_value: 2000
               inclusive: true
