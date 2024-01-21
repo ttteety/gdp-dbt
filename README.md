@@ -67,6 +67,10 @@ Ensure the profile is setup correctly from the command line:
 dbt debug
 ```
 ### 8. Run dbt
+Install dbt dependencies
+```
+dbt deps
+```
 Load the CSVs used for reference:
 ```
 dbt seed
