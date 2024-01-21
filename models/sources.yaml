@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: worldbank
+    schema: raw_db
+
+    tables:
+    - name: worldbank_gdp
